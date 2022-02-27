@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- =====Imatge de la pagina===== -->
+    <link rel="icon" href="./assets/images/icono.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>
+
+    <!-- =====Titul de la pagina===== -->
+    <title>TeleCarlos</title>
+
+    <!-- =====Connexio amb javascript per que funcioni lo que estigui escrit en el arxiu de typescript===== -->
+    <script src="./js/index.js"></script>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+  </head>
+
+  <!-- =====Estils de la pagina===== -->
+  <style>
+    .left-image{
+      background-color: rgba(0, 110, 255, 0.308);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+    }
+    .right-text{
+      background-color: rgba(0, 110, 255, 0.308);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    #menuDesplegable nav{
+      display: inline-block;
+    }
+    #menuDesplegable ul{
+      display: inline-block;
+      padding: 25px;
+      border: 1px solid white;
+      margin-bottom: 10px;
+    }
+
+    .dropbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  </style>
+
+  <body>
+    <div id="page-wraper">
+      <!-- Menu desplegable -->
+      <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+          <i class="fa fa-times" id="menu-close"></i>
+          <div class="container">
+            <div class="image">
+              <a href="#"><img src="assets/images/author-image.png" alt="" /></a>
+            </div>
+            <div class="author-content">
+              <h4>Administrador</h4>
+              <span>Master</span>
+            </div>
+            <div class="copyright-text">
+              <p>Copyright 2022 Carlos Morales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section about-me" id="section1">
+        <div class="container">
+          <br>
+          <!-- =====Part on es veura el menu desplegable===== -->
+          <div id="menuDesplegable"></div>
+          <br>
+          <div class="section-heading">
+            <h2>Creació de Noticies</h2>
+            <div class="line-dec"></div>
+            <span>Completa els camps per aconseguir crear una noticia.</span>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <!-- =====Part esquerra per veure les noticies afegides===== -->
+                <div class="left-image">
+                  <p>Noticies</p>
+                  <div id="noticiesColocades"></div>
+                </div>
+              </div>
+              <div class="line-dec"></div>
+              <div class="col-md-6">
+                <!-- =====Part del Formulari per afegir una noticia===== -->
+                <div class="right-text">
+                  <form>
+                    <div class="form-group">
+                      <label for="dataNoticia">Data de la Noticia</label>
+                      <input type="date" class="form-control" id="dataNoticia" aria-describedby="emailHelp">
+                      <div id="errorData"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="titolNoticia">Titol Noticia</label>
+                      <input type="text" class="form-control" id="titolNoticia" placeholder="Titol Noticia">
+                      <div id="errorTitol"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="enllaçNoticia">Enllaç Noticia</label>
+                      <input type="text" class="form-control" id="enllaçNoticia" placeholder="Enllaç Noticia">
+                      <div id="errorEnllaç"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="enllaçNoticia">Descripcio Noticia</label>
+                      <textarea class="descripcioNoticia" id="descripcioNoticia" cols="45" rows="7">Descripcio Noticia</textarea>
+                      <div id="errorDescripcio"></div>
+                    </div>
+                    <small id="sendInfo" class="form-text text-muted">La noticia es registrara un cop completis els camps</small>
+                    <br>
+                    <a type="submit" class="btn btn-primary" onclick="guardar()">Guardar</a>
+                    <div id="errorControlErrors"></div>
+                    <div id="hello"></div>
+                  </form>
+                </div>
+              </div>
+          </div>
+          </nav>
+              <div class="section-heading">
+                <h2>Creació de Menus</h2>
+                <div class="line-dec"></div>
+                <span>Completa els camps per aconseguir crear un menu.</span>
+              </div>
+              <form>
+                <div class="form-group">
+                  <label for="titolNoticia">Nom del menu</label>
+                  <input type="text" class="form-control" id="titolMenu" placeholder="Nom Menu">
+                  <span id="errorNomMenu"></span>
+                </div>
+                <div class="form-group">
+                  <label for="subelementsMenu">Subelements del menu</label>
+                  <input type="text" class="form-control" id="subelementsMenu" placeholder="Nom Menu">
+                  <span id="errorNomMenu"></span>
+                </div>
+                <div class="form-group">
+                  <label for="subelementsMenu">Segon Subelement del menu</label>
+                  <input type="text" class="form-control" id="subelementsMenu2" placeholder="Nom Menu">
+                  <span id="errorNomMenu"></span>
+                </div>
+                <div class="form-group">
+                  <label for="estilsMenuBoto">Estils del boto del Menu</label>
+                  <input type="text" class="form-control" id="estilsNoticia" placeholder="color: red;">
+                  <span id="errorEstilsNoticia"></span>
+                </div>
+                <div class="form-group">
+                  <label for="estilsMenuSubElement">Estils del Subelement del Menu</label>
+                  <input type="text" class="form-control" id="estilsNoticiaSubelement" placeholder="color: red;">
+                  <span id="errorEstilsNoticia"></span>
+                </div>
+                <div class="form-group">
+                  <label for="estilsMenuSubElement">Estils del segon Subelement del Menu</label>
+                  <input type="text" class="form-control" id="estilsNoticiaSubelement2" placeholder="color: red;">
+                  <span id="errorEstilsNoticia"></span>
+                </div>
+                <br>
+                    <a type="submit" class="btn btn-primary" onclick="guardarMenu()">Guardar</a>
+              </form>
+            </div>
+          </div>
+  </body>
+</html>
